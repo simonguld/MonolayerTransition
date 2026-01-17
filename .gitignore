@@ -1,3 +1,13 @@
+# Custom file format exclusions
+*.avi
+*.xml
+
+# Custom file exclusions
+*domain.tif
+*c1_*
+*c2_island*
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

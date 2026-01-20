@@ -1,6 +1,7 @@
 # Custom file format exclusions
 *.avi
 *.xml
+*.DS_Store
 
 # Custom file exclusions
 *domain.tif

@@ -3,7 +3,6 @@
 
 ### SETUP ------------------------------------------------------------------------------------
 
-from doctest import debug
 import io
 import sys
 import os
@@ -66,6 +65,7 @@ def main():
     target_feature=args.target_feature
     data_set = args.data_set
     verbose = args.verbose
+    debug = args.debug
 
     # CID parameters
     nframes_per_cube = args.Nframes_per_cube
@@ -76,7 +76,6 @@ def main():
     dtype = np.uint8
     cid_mode = 'lz77'
 
-    
     if data_set is None:
         folder_names = data_folders
     else:
@@ -178,11 +177,12 @@ def main():
                     cid_vals = cid_min * np.ones(cid_arr_full.shape[-1])
                 else:
                     cid_av, cid_std, cid_shuff, cid_vals = CID_obj(data)          
-                    
+
                 cid_arr[j, i, 0] = cid_av
                 cid_arr[j, i, 1] = cid_std
                 cid_shuffle_arr[j, i, :] = cid_shuff
                 cid_arr_full[j, i, :] = cid_vals
+
             if verbose: 
                 with warnings.catch_warnings():
                     warnings.simplefilter("ignore", category=RuntimeWarning)
